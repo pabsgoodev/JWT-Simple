@@ -1,96 +1,132 @@
-# Projeto de Autenticação com JWT (JSON Web Token)
+# JWT Authentication Project
+
+A simple authentication API built with **JSON Web Tokens (JWT)**, demonstrating token-based authentication and a layered backend architecture.
 
 ---
 
-Projeto simples de autenticação com JWT.
+# 📖 Project Overview
+
+This project was created to demonstrate the fundamentals of JWT authentication in a Node.js application.
+
+It follows the **Layered Architecture (Package by Layers)** pattern, organizing the application into distinct responsibilities:
+
+* **Controller** — Handles HTTP requests and responses.
+* **Service** — Contains the application's business logic.
+* **Repository** — Responsible for data access.
+
+This architecture improves maintainability, testability, and scalability.
 
 ---
 
-## Descrição do Projeto
+# 🚀 Features
 
-Projeto simples de autenticação utilizando JWT. A aplicação valida um usuário e gera um token de acesso com base nos dados enviados.
+* User validation (name and email)
+* JWT token generation
+* Standardized error responses for invalid requests
+* Layered project architecture
+* Ready to protect authenticated routes
 
-Foi utilizada a arquitetura **package by layers**, que organiza o código por camadas:
+### Authentication Flow
 
-* **Controller**: recebe requisições HTTP e retorna respostas
-* **Service**: contém a lógica de negócio
-* **Repository**: acesso a dados
-
-Essa organização facilita manutenção, testes e escalabilidade.
-
----
-
-## Status do Projeto
-
-Finalizado (projeto de estudo).
+1. The client submits user credentials.
+2. The application validates the request.
+3. If the credentials are valid, a JWT access token is generated and returned.
 
 ---
 
-## Funcionalidades e Demonstração da Aplicação
+# ▶️ Getting Started
 
-* Validação de usuário (nome e email)
-* Geração de token JWT
-* Retorno de erro se os dados forem inválidos
-* Estrutura organizada em camadas
-* Suporte a proteção de rotas
+Install the project dependencies:
 
-Fluxo:
-
-1. Usuário envia dados
-2. Sistema valida
-3. Se válido → gera token
-
----
-
-## Acesso ao Projeto
-
-Clone o repositório e instale as dependências:
-
-```
+```bash id="4gs5u8"
 npm install
 ```
 
-Execute o servidor:
+Start the development server:
 
-```
+```bash id="wtsnkr"
 npm run dev
 ```
 
-Rota de autenticação:
+Authentication endpoint:
 
-```
+```http id="ttkw4r"
 POST /api
 ```
 
 ---
 
-## Tecnologias utilizadas
+# 🛠 Technologies
 
 * Node.js
 * Express
-* JWT (JSON Web Token)
-* TypeScript (opcional)
+* JSON Web Token (JWT)
+* TypeScript
 
 ---
 
-## Pessoas Contribuidoras
+# 🏛 Project Architecture
 
-Sem contribuidores externos.
+The project follows the **Package by Layers** architecture:
+
+```text id="p62ss8"
+src/
+├── controllers/
+├── services/
+├── repositories/
+├── routes/
+├── app.ts
+└── server.ts
+```
+
+Each layer has a single responsibility, making the application easier to maintain and extend.
 
 ---
 
-## Pessoas Desenvolvedoras do Projeto
+# 🔒 Authentication
 
-Pablo Antônio Mascena Da Silva
+JWT is used to authenticate users and authorize access to protected resources.
+
+Typical workflow:
+
+* Validate user credentials.
+* Generate a signed JWT.
+* Return the token to the client.
+* Use the token in the `Authorization` header to access protected endpoints.
 
 ---
 
-## Licença
+# 📈 Future Improvements
 
-Uso livre para fins de estudo.
+* Password hashing with bcrypt
+* Database integration
+* User registration
+* Refresh Tokens
+* Role-Based Access Control (RBAC)
+* Access and Refresh Token strategy
+* Input validation with Zod
+* Security middlewares (Helmet, Rate Limiting, CORS)
 
 ---
 
-## Conclusão
+# 👥 Contributors
 
-Projeto simples para entender autenticação com JWT e arquitetura em camadas. Base para sistemas mais complexos com login e controle de acesso.
+There are currently no external contributors.
+
+---
+
+# 👨‍💻 Author
+
+**Pablo Antônio Mascena Da Silva**
+
+---
+
+# 📄 License
+
+This project is available for educational and portfolio purposes.
+
+---
+
+# 📌 Summary
+
+This project demonstrates the core concepts of JWT-based authentication using a layered architecture. It serves as a solid foundation for more advanced authentication systems, including user management, authorization, and secure API development.
